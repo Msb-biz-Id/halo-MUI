@@ -222,3 +222,37 @@ Selamat menggunakan Website Kemenag UI Anda! 🚀
 **Created with ❤️ by Cursor AI**
 **Date**: 17 November 2025
 **Status**: ✅ 100% COMPLETE & VERIFIED
+
+---
+
+## 🆕 NEW FEATURES ADDED! (17 Nov 2025)
+
+### 3 Fitur Baru Telah Ditambahkan:
+
+#### 1. ✅ Forum Topic Butuh Approval Admin/Superadmin
+- User buat topik → pending approval
+- Admin review & approve/reject
+- User dapat notifikasi hasil
+
+#### 2. ✅ User Harus Login untuk Berkomentar
+- Guest tidak bisa buat topik
+- Guest tidak bisa komen
+- Wajib register & login
+
+#### 3. ✅ Blacklist Kata Terlarang (Superadmin)
+- Auto detect: slot, judi, togel, casino, dll (20+ kata)
+- Auto reject konten spam
+- Admin panel lengkap di `/admin/blacklist`
+- Detection logging & statistics
+
+### 📂 Dokumentasi Lengkap:
+- **NEW_FEATURES_SUMMARY.md** - Overview 3 fitur baru ⭐
+- **FORUM_MODERATION_GUIDE.md** - Complete guide
+- **db/migration_forum_moderation.sql** - Database migration
+
+### 🚀 Quick Install:
+```bash
+mysql -u root -p kemenag_db < db/migration_forum_moderation.sql
+```
+
+**Status**: ✅ 100% COMPLETE & FUNCTIONAL!

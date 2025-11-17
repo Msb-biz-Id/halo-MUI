@@ -503,3 +503,87 @@ function clear_rate_limit($key)
         unlink($cacheFile);
     }
 }
+
+/**
+ * Check content for blacklisted words
+ * 
+ * @param string $content Content to check
+ * @return array Result array with has_blacklist, detected_words, action
+ */
+function check_blacklist($content) {
+    if (empty($content)) {
+        return [
+            'has_blacklist' => false,
+            'detected_words' => [],
+            'action' => 'pass',
+            'count' => 0
+        ];
+    }
+    
+    // Load blacklist model
+    require_once __DIR__ . '/models/WordBlacklist.php';
+    $blacklistModel = new \App\Models\WordBlacklist();
+    
+    return $blacklistModel->checkContent($content);
+}
+
+/**
+ * Quick check if content is safe (no auto_reject or block words)
+ * 
+ * @param string $content Content to check
+ * @return bool True if safe, False if has blocking words
+ */
+function is_content_safe($content) {
+    $result = check_blacklist($content);
+    
+    if (!$result['has_blacklist']) {
+        return true;
+    }
+    
+    // Block if action is auto_reject or block
+    return !in_array($result['action'], ['auto_reject', 'block']);
+}
+
+/**
+ * Get blacklist error message
+ * 
+ * @param array $checkResult Result from check_blacklist()
+ * @return string Error message
+ */
+function get_blacklist_error($checkResult) {
+    if (!$checkResult['has_blacklist']) {
+        return '';
+    }
+    
+    $action = $checkResult['action'];
+    $words = array_column($checkResult['detected_words'], 'word');
+    
+    switch ($action) {
+        case 'auto_reject':
+            return 'Konten Anda mengandung kata-kata yang tidak diperbolehkan: ' . implode(', ', $words);
+        case 'block':
+            return 'Konten Anda mengandung kata-kata yang mencurigakan. Silakan periksa kembali.';
+        case 'flag':
+            return 'Konten Anda akan ditinjau oleh admin sebelum dipublikasikan.';
+        default:
+            return '';
+    }
+}
+
+/**
+ * Log blacklist detection
+ * 
+ * @param int $userId User ID
+ * @param string $contentType Type of content (forum_topic, forum_post, etc)
+ * @param int|null $contentId Content ID
+ * @param array $detectedWords Detected words array
+ * @param string $content Original content
+ * @param string $action Action taken
+ * @return int|bool Log ID or false
+ */
+function log_blacklist_detection($userId, $contentType, $contentId, $detectedWords, $content, $action) {
+    require_once __DIR__ . '/models/WordBlacklist.php';
+    $blacklistModel = new \App\Models\WordBlacklist();
+    
+    return $blacklistModel->logDetection($userId, $contentType, $contentId, $detectedWords, $content, $action);
+}

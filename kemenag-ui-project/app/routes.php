@@ -158,3 +158,27 @@ $routes = [
 ];
 
 return $routes;
+
+// ==========================================
+// ADMIN ROUTES - Forum Moderation
+// ==========================================
+$router->add('admin/forum', ['controller' => 'Admin\ForumController', 'action' => 'index']);
+$router->add('admin/forum/view/{id:\d+}', ['controller' => 'Admin\ForumController', 'action' => 'view']);
+$router->add('admin/forum/approve/{id:\d+}', ['controller' => 'Admin\ForumController', 'action' => 'approve']);
+$router->add('admin/forum/reject/{id:\d+}', ['controller' => 'Admin\ForumController', 'action' => 'reject']);
+$router->add('admin/forum/delete/{id:\d+}', ['controller' => 'Admin\ForumController', 'action' => 'delete']);
+$router->add('admin/forum/toggle-lock/{id:\d+}', ['controller' => 'Admin\ForumController', 'action' => 'toggleLock']);
+$router->add('admin/forum/toggle-pin/{id:\d+}', ['controller' => 'Admin\ForumController', 'action' => 'togglePin']);
+$router->add('admin/forum/delete-post/{id:\d+}', ['controller' => 'Admin\ForumController', 'action' => 'deletePost']);
+
+// ==========================================
+// ADMIN ROUTES - Word Blacklist (Superadmin ONLY)
+// ==========================================
+$router->add('admin/blacklist', ['controller' => 'Admin\WordBlacklistController', 'action' => 'index']);
+$router->add('admin/blacklist/create', ['controller' => 'Admin\WordBlacklistController', 'action' => 'create']);
+$router->add('admin/blacklist/edit/{id:\d+}', ['controller' => 'Admin\WordBlacklistController', 'action' => 'edit']);
+$router->add('admin/blacklist/delete/{id:\d+}', ['controller' => 'Admin\WordBlacklistController', 'action' => 'delete']);
+$router->add('admin/blacklist/toggle-active/{id:\d+}', ['controller' => 'Admin\WordBlacklistController', 'action' => 'toggleActive']);
+$router->add('admin/blacklist/bulk-add', ['controller' => 'Admin\WordBlacklistController', 'action' => 'bulkAdd']);
+$router->add('admin/blacklist/detection-logs', ['controller' => 'Admin\WordBlacklistController', 'action' => 'detectionLogs']);
+$router->add('admin/blacklist/test', ['controller' => 'Admin\WordBlacklistController', 'action' => 'test']);
