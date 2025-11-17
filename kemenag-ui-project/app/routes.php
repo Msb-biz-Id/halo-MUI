@@ -154,31 +154,35 @@ $routes = [
     
     // Admin - Translations
     'admin/translations' => ['controller' => 'TranslationController', 'action' => 'index', 'namespace' => 'Admin'],
+    'admin/translations/create' => ['controller' => 'TranslationController', 'action' => 'create', 'namespace' => 'Admin'],
     'admin/translations/edit/{id}' => ['controller' => 'TranslationController', 'action' => 'edit', 'namespace' => 'Admin'],
+    'admin/translations/delete/{id}' => ['controller' => 'TranslationController', 'action' => 'delete', 'namespace' => 'Admin'],
+    
+    // Admin - Forum Moderation
+    'admin/forum' => ['controller' => 'ForumController', 'action' => 'index', 'namespace' => 'Admin'],
+    'admin/forum/view/{id}' => ['controller' => 'ForumController', 'action' => 'view', 'namespace' => 'Admin'],
+    'admin/forum/approve/{id}' => ['controller' => 'ForumController', 'action' => 'approve', 'namespace' => 'Admin'],
+    'admin/forum/reject/{id}' => ['controller' => 'ForumController', 'action' => 'reject', 'namespace' => 'Admin'],
+    'admin/forum/delete/{id}' => ['controller' => 'ForumController', 'action' => 'delete', 'namespace' => 'Admin'],
+    'admin/forum/toggle-lock/{id}' => ['controller' => 'ForumController', 'action' => 'toggleLock', 'namespace' => 'Admin'],
+    'admin/forum/toggle-pin/{id}' => ['controller' => 'ForumController', 'action' => 'togglePin', 'namespace' => 'Admin'],
+    'admin/forum/delete-post/{id}' => ['controller' => 'ForumController', 'action' => 'deletePost', 'namespace' => 'Admin'],
+    
+    // Admin - Word Blacklist
+    'admin/blacklist' => ['controller' => 'WordBlacklistController', 'action' => 'index', 'namespace' => 'Admin'],
+    'admin/blacklist/create' => ['controller' => 'WordBlacklistController', 'action' => 'create', 'namespace' => 'Admin'],
+    'admin/blacklist/edit/{id}' => ['controller' => 'WordBlacklistController', 'action' => 'edit', 'namespace' => 'Admin'],
+    'admin/blacklist/delete/{id}' => ['controller' => 'WordBlacklistController', 'action' => 'delete', 'namespace' => 'Admin'],
+    'admin/blacklist/toggle-active/{id}' => ['controller' => 'WordBlacklistController', 'action' => 'toggleActive', 'namespace' => 'Admin'],
+    'admin/blacklist/bulk-add' => ['controller' => 'WordBlacklistController', 'action' => 'bulkAdd', 'namespace' => 'Admin'],
+    'admin/blacklist/detection-logs' => ['controller' => 'WordBlacklistController', 'action' => 'detectionLogs', 'namespace' => 'Admin'],
+    'admin/blacklist/test' => ['controller' => 'WordBlacklistController', 'action' => 'test', 'namespace' => 'Admin'],
+    
+    // Admin - Category Management
+    'admin/categories' => ['controller' => 'CategoryController', 'action' => 'index', 'namespace' => 'Admin'],
+    'admin/categories/create' => ['controller' => 'CategoryController', 'action' => 'create', 'namespace' => 'Admin'],
+    'admin/categories/edit/{id}' => ['controller' => 'CategoryController', 'action' => 'edit', 'namespace' => 'Admin'],
+    'admin/categories/delete/{id}' => ['controller' => 'CategoryController', 'action' => 'delete', 'namespace' => 'Admin'],
 ];
 
 return $routes;
-
-// ==========================================
-// ADMIN ROUTES - Forum Moderation
-// ==========================================
-$router->add('admin/forum', ['controller' => 'Admin\ForumController', 'action' => 'index']);
-$router->add('admin/forum/view/{id:\d+}', ['controller' => 'Admin\ForumController', 'action' => 'view']);
-$router->add('admin/forum/approve/{id:\d+}', ['controller' => 'Admin\ForumController', 'action' => 'approve']);
-$router->add('admin/forum/reject/{id:\d+}', ['controller' => 'Admin\ForumController', 'action' => 'reject']);
-$router->add('admin/forum/delete/{id:\d+}', ['controller' => 'Admin\ForumController', 'action' => 'delete']);
-$router->add('admin/forum/toggle-lock/{id:\d+}', ['controller' => 'Admin\ForumController', 'action' => 'toggleLock']);
-$router->add('admin/forum/toggle-pin/{id:\d+}', ['controller' => 'Admin\ForumController', 'action' => 'togglePin']);
-$router->add('admin/forum/delete-post/{id:\d+}', ['controller' => 'Admin\ForumController', 'action' => 'deletePost']);
-
-// ==========================================
-// ADMIN ROUTES - Word Blacklist (Superadmin ONLY)
-// ==========================================
-$router->add('admin/blacklist', ['controller' => 'Admin\WordBlacklistController', 'action' => 'index']);
-$router->add('admin/blacklist/create', ['controller' => 'Admin\WordBlacklistController', 'action' => 'create']);
-$router->add('admin/blacklist/edit/{id:\d+}', ['controller' => 'Admin\WordBlacklistController', 'action' => 'edit']);
-$router->add('admin/blacklist/delete/{id:\d+}', ['controller' => 'Admin\WordBlacklistController', 'action' => 'delete']);
-$router->add('admin/blacklist/toggle-active/{id:\d+}', ['controller' => 'Admin\WordBlacklistController', 'action' => 'toggleActive']);
-$router->add('admin/blacklist/bulk-add', ['controller' => 'Admin\WordBlacklistController', 'action' => 'bulkAdd']);
-$router->add('admin/blacklist/detection-logs', ['controller' => 'Admin\WordBlacklistController', 'action' => 'detectionLogs']);
-$router->add('admin/blacklist/test', ['controller' => 'Admin\WordBlacklistController', 'action' => 'test']);
