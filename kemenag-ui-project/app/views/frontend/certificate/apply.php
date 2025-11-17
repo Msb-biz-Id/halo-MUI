@@ -123,6 +123,13 @@
                             </label>
                         </div>
                         
+                        <!-- Cloudflare Turnstile -->
+                        <?php if (function_exists('turnstile_enabled') && turnstile_enabled()): ?>
+                        <div class="mb-4">
+                            <?php include __DIR__ . '/../../components/turnstile.php'; ?>
+                        </div>
+                        <?php endif; ?>
+                        
                         <div class="d-flex gap-2">
                             <button type="submit" class="btn btn-primary btn-lg px-5">
                                 <i class="fas fa-paper-plane"></i> Kirim Permohonan

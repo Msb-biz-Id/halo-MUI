@@ -67,6 +67,12 @@ class CertificateController extends Controller
      */
     private function processApplication()
     {
+        // Verify Turnstile (anti-bot & spam prevention)
+        if (!turnstile_verify()) {
+            $this->setFlash('error', turnstile_error() ?? 'Security verification failed. Please try again.');
+            $this->redirect('/certificate/apply');
+        }
+        
         if (!$this->verifyCsrf()) {
             $this->setFlash('error', 'Invalid request');
             $this->redirect('/certificate/apply');

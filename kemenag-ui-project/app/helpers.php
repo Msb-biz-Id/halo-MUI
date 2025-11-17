@@ -587,3 +587,10 @@ function log_blacklist_detection($userId, $contentType, $contentId, $detectedWor
     
     return $blacklistModel->logDetection($userId, $contentType, $contentId, $detectedWords, $content, $action);
 }
+
+/**
+ * Load Turnstile Helper Functions
+ */
+if (file_exists(__DIR__ . '/helpers/turnstile.php')) {
+    require_once __DIR__ . '/helpers/turnstile.php';
+}

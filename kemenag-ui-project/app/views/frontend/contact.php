@@ -44,6 +44,11 @@
                                               placeholder="Tulis pesan Anda di sini..." required><?= old('message') ?></textarea>
                                 </div>
                                 
+                                <!-- Cloudflare Turnstile -->
+                                <?php if (function_exists('turnstile_enabled') && turnstile_enabled()): ?>
+                                    <?php include __DIR__ . '/../components/turnstile.php'; ?>
+                                <?php endif; ?>
+                                
                                 <button type="submit" class="btn btn-primary btn-lg w-100">
                                     <i class="fas fa-paper-plane"></i> Kirim Pesan
                                 </button>

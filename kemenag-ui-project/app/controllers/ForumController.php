@@ -178,10 +178,16 @@ class ForumController extends Controller
     }
     
     /**
-     * Process Create Topic with BLACKLIST CHECK
+     * Process Create Topic with BLACKLIST CHECK & TURNSTILE
      */
     private function processCreateTopic()
     {
+        // Verify Turnstile (anti-bot & spam prevention)
+        if (!turnstile_verify()) {
+            $this->setFlash('error', turnstile_error() ?? 'Security verification failed. Please try again.');
+            $this->redirect('/forum/create-topic');
+        }
+        
         if (!$this->verifyCsrf()) {
             $this->setFlash('error', 'Invalid request');
             $this->redirect('/forum/create-topic');
@@ -296,6 +302,12 @@ class ForumController extends Controller
         $this->requireAuth();
         
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            $this->redirect('/forum/topic/' . $topicId);
+        }
+        
+        // Verify Turnstile (anti-bot & spam prevention)
+        if (!turnstile_verify()) {
+            $this->setFlash('error', turnstile_error() ?? 'Security verification failed. Please try again.');
             $this->redirect('/forum/topic/' . $topicId);
         }
         
