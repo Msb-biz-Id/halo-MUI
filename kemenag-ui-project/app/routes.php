@@ -102,23 +102,23 @@ $routes = [
     'admin/roles/edit/{id}' => ['controller' => 'RoleController', 'action' => 'edit', 'namespace' => 'Admin'],
     'admin/roles/delete/{id}' => ['controller' => 'RoleController', 'action' => 'delete', 'namespace' => 'Admin'],
     
-    // Admin - Q&A Management
-    'admin/questions-answers' => ['controller' => 'QuestionAnswerController', 'action' => 'index', 'namespace' => 'Admin'],
-    'admin/questions-answers/create' => ['controller' => 'QuestionAnswerController', 'action' => 'create', 'namespace' => 'Admin'],
-    'admin/questions-answers/edit/{id}' => ['controller' => 'QuestionAnswerController', 'action' => 'edit', 'namespace' => 'Admin'],
-    'admin/questions-answers/delete/{id}' => ['controller' => 'QuestionAnswerController', 'action' => 'delete', 'namespace' => 'Admin'],
+    // Admin - Q&A Management (FIXED ROUTE!)
+    'admin/qa' => ['controller' => 'QuestionAnswerController', 'action' => 'index', 'namespace' => 'Admin'],
+    'admin/qa/create' => ['controller' => 'QuestionAnswerController', 'action' => 'create', 'namespace' => 'Admin'],
+    'admin/qa/edit/{id}' => ['controller' => 'QuestionAnswerController', 'action' => 'edit', 'namespace' => 'Admin'],
+    'admin/qa/delete/{id}' => ['controller' => 'QuestionAnswerController', 'action' => 'delete', 'namespace' => 'Admin'],
     
-    // Admin - Fatwa Management
-    'admin/fatwas' => ['controller' => 'FatwaController', 'action' => 'index', 'namespace' => 'Admin'],
-    'admin/fatwas/create' => ['controller' => 'FatwaController', 'action' => 'create', 'namespace' => 'Admin'],
-    'admin/fatwas/edit/{id}' => ['controller' => 'FatwaController', 'action' => 'edit', 'namespace' => 'Admin'],
-    'admin/fatwas/delete/{id}' => ['controller' => 'FatwaController', 'action' => 'delete', 'namespace' => 'Admin'],
+    // Admin - Fatwa Management (FIXED ROUTE!)
+    'admin/fatwa' => ['controller' => 'FatwaController', 'action' => 'index', 'namespace' => 'Admin'],
+    'admin/fatwa/create' => ['controller' => 'FatwaController', 'action' => 'create', 'namespace' => 'Admin'],
+    'admin/fatwa/edit/{id}' => ['controller' => 'FatwaController', 'action' => 'edit', 'namespace' => 'Admin'],
+    'admin/fatwa/delete/{id}' => ['controller' => 'FatwaController', 'action' => 'delete', 'namespace' => 'Admin'],
     
-    // Admin - Material Management
-    'admin/materials' => ['controller' => 'MaterialController', 'action' => 'index', 'namespace' => 'Admin'],
-    'admin/materials/create' => ['controller' => 'MaterialController', 'action' => 'create', 'namespace' => 'Admin'],
-    'admin/materials/edit/{id}' => ['controller' => 'MaterialController', 'action' => 'edit', 'namespace' => 'Admin'],
-    'admin/materials/delete/{id}' => ['controller' => 'MaterialController', 'action' => 'delete', 'namespace' => 'Admin'],
+    // Admin - Material Management (FIXED ROUTE!)
+    'admin/material' => ['controller' => 'MaterialController', 'action' => 'index', 'namespace' => 'Admin'],
+    'admin/material/create' => ['controller' => 'MaterialController', 'action' => 'create', 'namespace' => 'Admin'],
+    'admin/material/edit/{id}' => ['controller' => 'MaterialController', 'action' => 'edit', 'namespace' => 'Admin'],
+    'admin/material/delete/{id}' => ['controller' => 'MaterialController', 'action' => 'delete', 'namespace' => 'Admin'],
     
     // Admin - Book Management
     'admin/books' => ['controller' => 'BookController', 'action' => 'index', 'namespace' => 'Admin'],
