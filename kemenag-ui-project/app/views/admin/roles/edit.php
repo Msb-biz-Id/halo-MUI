@@ -76,7 +76,7 @@
                                             <div class="form-check">
                                                 <input class="form-check-input group_<?= str_replace(' ', '_', $group) ?>" 
                                                        type="checkbox" name="permissions[<?= $perm ?>]" 
-                                                       id="perm_<?= $perm ?>$ value="1"
+                                                       id="perm_<?= $perm ?>" value="1"
                                                        <?= isset($currentPermissions[$perm]) && $currentPermissions[$perm] ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="perm_<?= $perm ?>">
                                                     <?= ucwords(str_replace('_', ' ', $perm)) ?>
