@@ -15,7 +15,8 @@
         "phpoffice/phpspreadsheet": "^1.29",
         "spomky-labs/otphp": "^10.0",
         "google/generative-ai-php": "^0.3",
-        "guzzlehttp/guzzle": "^7.8"
+        "guzzlehttp/guzzle": "^7.8",
+        "tecnickcom/tcpdf": "^6.7"
     },
     "autoload": {
         "psr-4": {
