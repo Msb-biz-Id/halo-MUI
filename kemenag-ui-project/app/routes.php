@@ -183,6 +183,16 @@ $routes = [
     'admin/categories/create' => ['controller' => 'CategoryController', 'action' => 'create', 'namespace' => 'Admin'],
     'admin/categories/edit/{id}' => ['controller' => 'CategoryController', 'action' => 'edit', 'namespace' => 'Admin'],
     'admin/categories/delete/{id}' => ['controller' => 'CategoryController', 'action' => 'delete', 'namespace' => 'Admin'],
+    
+    // Admin - Advanced Features (NEW)
+    'admin/monitoring' => ['controller' => 'Admin/MonitoringController', 'action' => 'index'],
+    'admin/monitoring/performance' => ['controller' => 'Admin/MonitoringController', 'action' => 'performance'],
+    'admin/backup' => ['controller' => 'Admin/BackupController', 'action' => 'index'],
+    'admin/backup/create' => ['controller' => 'Admin/BackupController', 'action' => 'create'],
+    'admin/backup/restore/{id}' => ['controller' => 'Admin/BackupController', 'action' => 'restore'],
+    'admin/backup/download/{id}' => ['controller' => 'Admin/BackupController', 'action' => 'download'],
+    'admin/queue' => ['controller' => 'Admin/QueueController', 'action' => 'index'],
+    'admin/queue/clear/{queue}' => ['controller' => 'Admin/QueueController', 'action' => 'clear'],
 ];
 
 return $routes;
