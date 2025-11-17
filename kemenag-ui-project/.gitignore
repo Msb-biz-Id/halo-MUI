@@ -1,0 +1,103 @@
+# Environment Configuration
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+/vendor/
+/node_modules/
+
+# IDE & Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# Logs
+/storage/logs/*.log
+/storage/logs/*.txt
+*.log
+
+# Cache
+/storage/cache/*
+!/storage/cache/.gitkeep
+
+# Sessions
+/storage/sessions/*
+!/storage/sessions/.gitkeep
+
+# Exports
+/storage/exports/*
+!/storage/exports/.gitkeep
+
+# Uploads
+/public/uploads/*
+!/public/uploads/.gitkeep
+/public/uploads/temp/*
+
+# Compiled Assets
+/public/assets/compiled/*
+*.min.js
+*.min.css
+
+# Composer
+composer.lock
+composer.phar
+
+# Package Managers
+package-lock.json
+yarn.lock
+.pnpm-store/
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Backup Files
+*.sql
+*.sql.gz
+*.backup
+*.bak
+*.swp
+*.swo
+*~
+
+# Testing
+/coverage/
+/.phpunit.result.cache
+
+# Temporary Files
+/tmp/
+/temp/
+*.tmp
+
+# Build Files
+/dist/
+/build/
+
+# Docker
+docker-compose.override.yml
+
+# CI/CD
+.gitlab-ci-local/
+
+# Sensitive Data
+*.key
+*.pem
+*.cert
+*.crt
+*.p12
+
+# Project Specific
+/storage/app/private/*
+!/storage/app/private/.gitkeep
+/public/sitemap.xml
+/public/robots.txt
