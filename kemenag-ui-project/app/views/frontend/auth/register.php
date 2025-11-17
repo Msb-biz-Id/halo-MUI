@@ -67,6 +67,9 @@
                             </label>
                         </div>
                         
+                        <!-- Cloudflare Turnstile -->
+                        <?php include __DIR__ . '/../../components/turnstile.php'; ?>
+                        
                         <div class="d-grid gap-2 mb-3">
                             <button type="submit" class="btn btn-primary btn-lg">
                                 <i class="fas fa-user-plus me-2"></i> Daftar Sekarang

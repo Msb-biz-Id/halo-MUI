@@ -52,6 +52,12 @@ class AuthController extends Controller
      */
     private function processLogin()
     {
+        // Verify Turnstile first (anti-bot & brute-force protection)
+        if (!turnstile_verify()) {
+            $this->setFlash('error', turnstile_error() ?? 'Security verification failed. Please try again.');
+            $this->redirect('/auth/login');
+        }
+        
         // Verify CSRF
         if (!$this->verifyCsrf()) {
             $this->setFlash('error', 'Invalid request');
@@ -180,6 +186,12 @@ class AuthController extends Controller
      */
     private function processRegister()
     {
+        // Verify Turnstile (anti-bot)
+        if (!turnstile_verify()) {
+            $this->setFlash('error', turnstile_error() ?? 'Security verification failed. Please try again.');
+            $this->redirect('/auth/register');
+        }
+        
         if (!$this->verifyCsrf()) {
             $this->setFlash('error', 'Invalid request');
             $this->redirect('/auth/register');
@@ -281,6 +293,12 @@ class AuthController extends Controller
      */
     private function processForgotPassword()
     {
+        // Verify Turnstile (prevent brute-force on password reset)
+        if (!turnstile_verify()) {
+            $this->setFlash('error', turnstile_error() ?? 'Security verification failed. Please try again.');
+            $this->redirect('/auth/forgot-password');
+        }
+        
         if (!$this->verifyCsrf()) {
             $this->setFlash('error', 'Invalid request');
             $this->redirect('/auth/forgot-password');

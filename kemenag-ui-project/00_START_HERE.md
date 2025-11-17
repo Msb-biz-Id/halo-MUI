@@ -30,6 +30,23 @@ php generate_keys.php
 # Answer 'y' when asked to auto-update .env
 ```
 
+### Step 2b: Cloudflare Turnstile (Recommended)
+
+```bash
+# 1. Get Turnstile keys from:
+#    https://dash.cloudflare.com/ → Turnstile → Add Site
+
+# 2. Add to .env:
+TURNSTILE_ENABLED=true
+TURNSTILE_SITE_KEY=your_site_key_here
+TURNSTILE_SECRET_KEY=your_secret_key_here
+
+# 3. Protection automatically active on:
+#    - Login, Register, Forgot Password
+#    - Certificate Application
+#    - Forum Posts
+```
+
 ### Step 3: Dependencies
 
 ```bash

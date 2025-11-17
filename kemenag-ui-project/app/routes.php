@@ -217,6 +217,11 @@ $routes = [
     
     // Admin - Bulk Actions (NEW)
     'admin/bulk/process' => ['controller' => 'Admin/BulkActionController', 'action' => 'process'],
+    
+    // Admin - Turnstile Security (NEW)
+    'admin/turnstile' => ['controller' => 'Admin/TurnstileController', 'action' => 'index'],
+    'admin/turnstile/suspicious' => ['controller' => 'Admin/TurnstileController', 'action' => 'suspicious'],
+    'admin/turnstile/test' => ['controller' => 'Admin/TurnstileController', 'action' => 'test'],
 ];
 
 return $routes;
