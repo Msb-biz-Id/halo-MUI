@@ -6,8 +6,8 @@
     <title><?= $page_title ?? 'User Dashboard' ?> - Kemenag UI</title>
     
     <!-- CSS -->
-    <link rel="stylesheet" href="<?= asset('news5/assets/css/bootstrap.min.css') ?>">
-    <link rel="stylesheet" href="<?= asset('news5/assets/css/all.min.css') ?>">
+    <link rel="stylesheet" href="<?= asset('assets/frontend/news5/assets/css/bootstrap.min.css') ?>">
+    <link rel="stylesheet" href="<?= asset('assets/frontend/news5/assets/css/all.min.css') ?>">
     
     <style>
         :root {
@@ -215,8 +215,8 @@
     </div>
     
     <!-- Scripts -->
-    <script src="<?= asset('news5/assets/js/jquery-3.6.0.min.js') ?>"></script>
-    <script src="<?= asset('news5/assets/js/bootstrap.bundle.min.js') ?>"></script>
+    <script src="<?= asset('assets/frontend/news5/assets/js/jquery-3.6.0.min.js') ?>"></script>
+    <script src="<?= asset('assets/frontend/news5/assets/js/bootstrap.bundle.min.js') ?>"></script>
     
     <script>
         // Sidebar toggle for mobile

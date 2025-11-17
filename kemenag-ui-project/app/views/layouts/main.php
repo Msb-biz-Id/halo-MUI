@@ -20,10 +20,10 @@
     <link rel="icon" href="<?= asset('favicon.ico') ?>" type="image/x-icon">
     
     <!-- CSS from News5 Template -->
-    <link rel="stylesheet" href="<?= asset('news5/assets/css/bootstrap.min.css') ?>">
-    <link rel="stylesheet" href="<?= asset('news5/assets/css/all.min.css') ?>">
-    <link rel="stylesheet" href="<?= asset('news5/assets/css/style.css') ?>">
-    <link rel="stylesheet" href="<?= asset('news5/assets/css/responsive.css') ?>">
+    <link rel="stylesheet" href="<?= asset('assets/frontend/news5/assets/css/bootstrap.min.css') ?>">
+    <link rel="stylesheet" href="<?= asset('assets/frontend/news5/assets/css/all.min.css') ?>">
+    <link rel="stylesheet" href="<?= asset('assets/frontend/news5/assets/css/style.css') ?>">
+    <link rel="stylesheet" href="<?= asset('assets/frontend/news5/assets/css/responsive.css') ?>">
     
     <!-- Custom CSS -->
     <style>
@@ -189,9 +189,9 @@
     </footer>
     
     <!-- Scripts -->
-    <script src="<?= asset('news5/assets/js/jquery-3.6.0.min.js') ?>"></script>
-    <script src="<?= asset('news5/assets/js/bootstrap.bundle.min.js') ?>"></script>
-    <script src="<?= asset('news5/assets/js/main.js') ?>"></script>
+    <script src="<?= asset('assets/frontend/news5/assets/js/jquery-3.6.0.min.js') ?>"></script>
+    <script src="<?= asset('assets/frontend/news5/assets/js/bootstrap.bundle.min.js') ?>"></script>
+    <script src="<?= asset('assets/frontend/news5/assets/js/main.js') ?>"></script>
     
     <!-- Custom Scripts -->
     <script>

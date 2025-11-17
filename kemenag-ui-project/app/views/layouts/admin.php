@@ -6,9 +6,9 @@
     <title><?= $page_title ?? 'Admin Panel' ?> - Kemenag UI</title>
     
     <!-- Morvin Admin Template CSS -->
-    <link rel="stylesheet" href="<?= asset('Morvin_HTML_v1.2.0/HTML/dist/assets/css/bootstrap.min.css') ?>">
-    <link rel="stylesheet" href="<?= asset('Morvin_HTML_v1.2.0/HTML/dist/assets/css/icons.min.css') ?>">
-    <link rel="stylesheet" href="<?= asset('Morvin_HTML_v1.2.0/HTML/dist/assets/css/app.min.css') ?>">
+    <link rel="stylesheet" href="<?= asset('assets/admin/Morvin_HTML_v1.2.0/HTML/dist/assets/css/bootstrap.min.css') ?>">
+    <link rel="stylesheet" href="<?= asset('assets/admin/Morvin_HTML_v1.2.0/HTML/dist/assets/css/icons.min.css') ?>">
+    <link rel="stylesheet" href="<?= asset('assets/admin/Morvin_HTML_v1.2.0/HTML/dist/assets/css/app.min.css') ?>">
     
     <style>
         :root {
@@ -294,11 +294,11 @@
     </div>
     
     <!-- Scripts -->
-    <script src="<?= asset('Morvin_HTML_v1.2.0/HTML/dist/assets/libs/jquery/jquery.min.js') ?>"></script>
-    <script src="<?= asset('Morvin_HTML_v1.2.0/HTML/dist/assets/libs/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-    <script src="<?= asset('Morvin_HTML_v1.2.0/HTML/dist/assets/libs/metismenu/metisMenu.min.js') ?>"></script>
-    <script src="<?= asset('Morvin_HTML_v1.2.0/HTML/dist/assets/libs/simplebar/simplebar.min.js') ?>"></script>
-    <script src="<?= asset('Morvin_HTML_v1.2.0/HTML/dist/assets/js/app.js') ?>"></script>
+    <script src="<?= asset('assets/admin/Morvin_HTML_v1.2.0/HTML/dist/assets/libs/jquery/jquery.min.js') ?>"></script>
+    <script src="<?= asset('assets/admin/Morvin_HTML_v1.2.0/HTML/dist/assets/libs/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+    <script src="<?= asset('assets/admin/Morvin_HTML_v1.2.0/HTML/dist/assets/libs/metismenu/metisMenu.min.js') ?>"></script>
+    <script src="<?= asset('assets/admin/Morvin_HTML_v1.2.0/HTML/dist/assets/libs/simplebar/simplebar.min.js') ?>"></script>
+    <script src="<?= asset('assets/admin/Morvin_HTML_v1.2.0/HTML/dist/assets/js/app.js') ?>"></script>
     
     <script>
         // Auto-hide flash messages
