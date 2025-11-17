@@ -17,18 +17,13 @@ class ErrorMonitoringService
     
     public function __construct()
     {
-        $this->sentryDsn = env('SENTRY_DSN');
         $this->environment = env('APP_ENV', 'production');
         $this->enabled = env('ERROR_MONITORING_ENABLED', true);
         $this->localLogPath = __DIR__ . '/../../storage/logs/';
         
-        // Initialize Sentry if available
-        if ($this->enabled && $this->sentryDsn && class_exists('\Sentry\init')) {
-            \Sentry\init([
-                'dsn' => $this->sentryDsn,
-                'environment' => $this->environment,
-                'traces_sample_rate' => 1.0,
-            ]);
+        // Using LOCAL logging only (Sentry removed)
+        if (!is_dir($this->localLogPath)) {
+            mkdir($this->localLogPath, 0777, true);
         }
     }
     
@@ -39,11 +34,6 @@ class ErrorMonitoringService
     {
         // Log to local file
         $this->logToFile($exception, $context);
-        
-        // Send to Sentry if configured
-        if ($this->enabled && function_exists('\Sentry\captureException')) {
-            \Sentry\captureException($exception);
-        }
         
         // Send alert email for critical errors
         if ($this->isCritical($exception)) {
@@ -66,13 +56,8 @@ class ErrorMonitoringService
             'ip' => $_SERVER['REMOTE_ADDR'] ?? 'unknown'
         ];
         
-        // Log to file
+        // Log to file only
         $this->writeLog('messages', $logData);
-        
-        // Send to Sentry
-        if ($this->enabled && function_exists('\Sentry\captureMessage')) {
-            \Sentry\captureMessage($message, $level);
-        }
     }
     
     /**

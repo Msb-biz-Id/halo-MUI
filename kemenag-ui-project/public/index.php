@@ -20,6 +20,12 @@ define('BASE_PATH', dirname(__DIR__));
 // Load Composer autoloader
 require_once BASE_PATH . '/vendor/autoload.php';
 
+// Check maintenance mode FIRST (before loading anything else)
+if (file_exists(BASE_PATH . '/app/middleware/MaintenanceMiddleware.php')) {
+    require_once BASE_PATH . '/app/middleware/MaintenanceMiddleware.php';
+    \App\Middleware\MaintenanceMiddleware::check();
+}
+
 // Load configuration
 require_once BASE_PATH . '/config/config.php';
 
